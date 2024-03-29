@@ -1,0 +1,123 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="About | François Pazery" description="professional career">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="About"
+				tagline="professional career"
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/assets/paz2.jpg"
+					alt="François Pazery at work with a colleague"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Background</h2>
+				<div class="content">
+					<p>
+						After spending several years in a demanding and highly technical
+            environment within the 7th Battalion of Alpine Hunters,
+            first as radio operator and later as a shooting instructor
+            I decided to pursue a career in web development.
+					</p>
+					<p>
+						During my transition,
+            I underwent intensive training, notably with Ruby on Rails.
+            These experiences have equipped me with a solid foundation in programming,
+            database design, and web application deployment.
+					</p>
+
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Education</h2>
+				<div class="content">
+					<p>
+            baccalaureate literary serie
+          </p>
+          <p>
+            Web and Mobile Web Developer (Level Rncp 4)
+          </p>
+          <p>
+           Web Application Developer (Level Rncp 6)
+          </p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Strengths</h2>
+				<div class="content">
+					<p>Dynamic, Organized, Autonomous, Curious, Rigorous</p>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
