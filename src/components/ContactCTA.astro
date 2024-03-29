@@ -1,47 +1,82 @@
 ---
-import CallToAction from './CallToAction.astro';
-import Icon from './Icon.astro';
+import CallToAction from "./CallToAction.astro";
+import Icon from "./Icon.astro";
 ---
 
+<style>
+  aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem; /* Espace entre chaque élément */
+    text-align: center; /* Centrer le texte */
+  }
+
+  h2 {
+    margin: 0; /* Supprimer les marges par défaut */
+  }
+</style>
+
 <aside>
-
-	<h2>Interested in working together?</h2>
-  <p>François Pazery</p>
-  <Icon icon="paper-plane-tilt" size="2em" />
-
-
+  <Icon icon="paper-plane-tilt" size="2.5em" />
+  <h4>Email: françois.pazery@gmail.com</h4>
+  <h4>Tel: +33 6 49 72 91 29</h4>
 </aside>
 
 <style>
-	aside {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 3rem;
-		border-top: 1px solid var(--gray-800);
-		border-bottom: 1px solid var(--gray-800);
-		padding: 5rem 1.5rem;
-		background-color: var(--gray-999_40);
-		box-shadow: var(--shadow-sm);
-	}
+  aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    border-top: 1px solid var(--gray-800);
+    border-bottom: 1px solid var(--gray-800);
+    padding: 5rem 1.5rem;
+    background-color: var(--gray-999_40);
+    box-shadow: var(--shadow-sm);
+  }
 
-	h2 {
-		font-size: var(--text-xl);
-		text-align: center;
-		max-width: 15ch;
-	}
+  h2 {
+    font-size: var(--text-xl);
+    text-align: center;
+    max-width: 15ch;
+  }
 
-	@media (min-width: 50em) {
-		aside {
-			padding: 7.5rem;
-			flex-direction: row;
-			flex-wrap: wrap;
-			justify-content: space-between;
-		}
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
 
-		h2 {
-			font-size: var(--text-3xl);
-			text-align: left;
-		}
-	}
+  .contact-block {
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  @media (min-width: 50em) {
+    aside {
+      padding: 7.5rem;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    h2 {
+      font-size: var(--text-3xl);
+      text-align: left;
+    }
+
+    .contact-info {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .contact-block {
+      align-items: flex-start;
+      text-align: left;
+    }
+  }
 </style>
