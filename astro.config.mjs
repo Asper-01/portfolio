@@ -1,4 +1,6 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig } from 'astro/config'
 
-// https://Asper-01.build/config
-export default defineConfig({});
+export default defineConfig({
+  site: 'https://Asper-01.github.io',
+  base: '/portfolio',
+})
