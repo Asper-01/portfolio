@@ -14,7 +14,7 @@ tags:
 
 <div style="text-align:center;">
   <a href="https://github.com/Asper-01/TP-OCR-PHP-CRUD" target="_blank" style="margin-right: 20px;">
-    <img src="/assets/Git.png" alt="icone git" width="100">
+    <img src="/portfolio/public/assets/Git.png" alt="icone git" width="100">
   </a>
 </div>
 
@@ -38,4 +38,3 @@ content or e-commerce.
     <img src="/assets/pdf.png" alt="Icône PDF" width="100">
   </a>
 </div>
-
