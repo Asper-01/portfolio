@@ -8,12 +8,6 @@ on:
   # Vous permet d'exécuter ce workflow manuellement à partir de l'onglet Actions sur GitHub.
   workflow_dispatch:
 
-# Autoriser cette tâche à cloner le dépôt et à créer un déploiement de page
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
 jobs:
   build:
     runs-on: ubuntu-latest
