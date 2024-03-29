@@ -1,18 +1,9 @@
 name: Deploy to GitHub Pages
 
 on:
-  # Déclenchez le workflow chaque fois que vous poussez vers la branche `main`
-  # Vous utilisez un nom de branche différent ? Remplacez `main` par le nom de votre branche
   push:
     branches: [ main ]
-  # Vous permet d'exécuter ce workflow manuellement à partir de l'onglet Actions sur GitHub.
   workflow_dispatch:
-
-# Autoriser cette tâche à cloner le dépôt et à créer un déploiement de page
-permissions:
-  contents: read
-  pages: write
-  id-token: write
 
 jobs:
   build:
@@ -21,18 +12,21 @@ jobs:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
       - name: Install, build, and upload your site
+        id: deployment  # Définir un identifiant pour cette étape
         uses: withastro/action@v2
         with:
             # path: . # L'emplacement racine de votre projet Astro dans le dépôt. (facultatif)
             # node-version: 20 # The specific version of Node that should be used to build your site. Defaults to 20. (facultatif)
             # package-manager: yarn # Le gestionnaire de paquets Node qui doit être utilisé pour installer les dépendances et build votre site. Détecté automatiquement en fonction de votre lockfile. (facultatif)
+      - name: Set output URL
+        run: echo "page_url=https://Asper-01.github.io" >> $GITHUB_ENV  # Remplacez "https://example.com" par votre URL réelle
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ needs.build.outputs.page_url }}
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
